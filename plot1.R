@@ -1,0 +1,5 @@
+dataset <- read.csv2("/Users/vasudok/R Programming/Coursera R/EDAProject1/household_power_consumption.txt")
+workingset <- subset(dataset, Date == "1/2/2007" | Date == "2/2/2007")
+png(filename = "/Users/vasudok/R Programming/Coursera R/EDAProject1/plot1.png")
+hist(as.numeric(workingset$Global_active_power), col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power", xlim = c(0, 6), ylim = c(0, 1200))
+dev.off()
