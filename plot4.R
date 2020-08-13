@@ -1,0 +1,12 @@
+png(filename = "/Users/vasudok/R Programming/Coursera R/EDAProject1/plot4.png")
+par(mfrow = c(2, 2))
+with(workingset2, {
+  plot(Time, Global_active_power, type="l", ylab="Global Active Power (in kilowatts)", xlab = " ")
+  plot(Time, Voltage, type="l", ylab="Global Active Power (in kilowatts)", xlab = "datetime")
+  plot(Time, Sub_metering_1, type="l", xlab = "", ylab = "Energy sub metering")
+  lines(Time, Sub_metering_2, type = "l", col = "red")
+  lines(Time, Sub_metering_3, type = "l", col = "blue")
+  legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "blue", "red"), lty = 1)
+  plot(Time, Global_reactive_power, type="l", xlab = "datetime")
+})
+dev.off()
